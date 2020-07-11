@@ -36,7 +36,7 @@
           <div class="right-menu list-inline no-margin-bottom">    
             
             <!-- Languages dropdown    -->
-            <div class="list-inline-item "><a class="nav-link"><img src="img/flags/16/GB.png" alt="Profile"><span class="d-none d-sm-inline-block">Admin</span></a>   </div>
+            <div class="list-inline-item "><a class="nav-link"><span class="d-none d-sm-inline-block"><?php $_SESSION['admin_name']?></span></a>   </div>
             <!-- Log out-->
             <div class="list-inline-item logout"><a id="logout" href="../logout.php" class="nav-link">Logout <i class="icon-logout"></i></a></div>
           </div>
@@ -48,10 +48,15 @@
       <nav id="sidebar">
         <!-- Sidebar Header-->
         <div class="sidebar-header d-flex align-items-center">
-          <div class="avatar"><img src="img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div>
+          <!-- <div class="avatar"><img src="img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div> -->
           <div class="title">
-            <h1 class="h5">Mark Stephen</h1>
-            <p>Web Designer</p>
+            <h1 class="h5"><?php echo $_SESSION['admin_name']?></h1>
+            <?php
+            include '../connection.php';
+            $AdminResult=mysqli_query($conn,"select * from admin where Admin_Id=".$_SESSION['admin']);
+            $AdminRow=mysqli_fetch_array($AdminResult);
+            ?>
+            <p><?php echo $AdminRow['Admin_Email']?></p>
           </div>
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
@@ -60,11 +65,11 @@
                 <li><a href="Employee.php"> <i class="icon-grid"></i>Employees </a></li>
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Events </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="#">Meeting</a></li>
+                    <li><a href="AddEvent.php">Meeting</a></li>
                     <li><a href="#">Competitons</a></li>
                   </ul>
                 </li>
-                <li><a href="tables.html"> <i class="icon-grid"></i>Winners </a></li>
+                <li><a href="../Winners.php"> <i class="icon-grid"></i>Winners </a></li>
                 <li><a href="../logout.php"> <i class="icon-logout"></i>Logout </a></li>
         
       </nav>

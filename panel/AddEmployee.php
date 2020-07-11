@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(!isset($_SESSION['admin']))
+{
+    header('location:adminlogin.php');
+}else{
 include '../connection.php';
 $query1="select * from department";
 $result1=mysqli_query($conn,$query1);
@@ -18,7 +23,7 @@ if(isset($_POST['addEmployee']))
     $result=mysqli_query($conn,$query);
     if($result)
     {
-       header('Location:viewemployee.php');
+       header('Location:Employee.php');
     }else{
         echo "Failed ! ".mysqli_error($conn);
     }
@@ -77,7 +82,7 @@ include 'header.php';
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Select Date of Birth</label>
-                                    <input type="date" class="form-control" name="empemail">
+                                    <input type="date" class="form-control" name="empdob">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Enter Contact number</label>
@@ -96,4 +101,5 @@ include 'header.php';
 </div>
 <?php
 include 'footer.php';
+}
 ?>

@@ -12,8 +12,9 @@ if(isset($_POST['loginbtn']))
     $count = mysqli_num_rows($result);
     if($count)
     {
-       $_SESSION['admin']=$loginemail;
-        header("Location:../index.php");
+       $_SESSION['admin']=$row['Admin_Id'];
+       $_SESSION['admin_name']=$row['Admin_Name'];
+        header("Location:index.php");
     }else{
 
         echo mysqli_error($conn);

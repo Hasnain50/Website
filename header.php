@@ -93,7 +93,7 @@ session_start();
                                             <li><a href="about.php">About</a></li>
                                             <li><a href="contact.php">Contact</a></li>
                                             <?php if(!isset($_SESSION['employee'])){ ?>
-                                            <li><a href="panel/employeelogin.php">Login</a></li>
+                                            <li><a href="panel/adminlogin.php">Login</a></li>
                                             <?php } else { ?>
                                             <li><a href="logout.php">LogOut</a></li>
                                             <?php } ?>

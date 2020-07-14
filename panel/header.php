@@ -63,9 +63,10 @@
         <ul class="list-unstyled">
                 <li><a href="index.html"> <i class="icon-home"></i>Dashboard </a></li>
                 <li><a href="Employee.php"> <i class="icon-grid"></i>Employees </a></li>
+                <li><a href="Department.php"> <i class="icon-grid"></i>Department </a></li>
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Events </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                    <li><a href="AddEvent.php">Meeting</a></li>
+                    <li><a href="Events.php">Meeting</a></li>
                     <li><a href="#">Competitons</a></li>
                   </ul>
                 </li>

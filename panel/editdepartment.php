@@ -4,26 +4,30 @@ if(!isset($_SESSION['admin']))
 {
     header('location:adminlogin.php');
 }else{
-include '../connection.php';
-$query1="select * from department";
-$result1=mysqli_query($conn,$query1);
+    include '../connection.php';
+$id=$_GET['id'];
+$query1="SELECT * FROM department where Dep_Id=".$id;
+
+$result1=mysqli_query($conn,$query1); 
+$row1=mysqli_fetch_array($result1);  
 
 if(isset($_POST['addDepartment']))
 {
   $Dep_Name=$_POST['DepName'];
-  $query="INSERT into department (Dep_Name)values('$Dep_Name')";
+  $query="UPDATE department set Dep_Name='$Dep_Name' where Dep_Id='$id'";
   $result=mysqli_query($conn,$query);
   if($result)
   {
     //echo "Successfull";
     header('location:Department.php');
   }else{
-    echo "Failed ! ".mysqli_error($conn);
-
+    echo "Failed ";
   }
 }
-?>
-<? include 'header.php';
+
+
+
+ include 'header.php';
 ?>
 <div class="page-content">
     <!-- Page Header-->
@@ -50,7 +54,7 @@ if(isset($_POST['addDepartment']))
                             <form method="POST">
                                 <div class="form-group">
                                     <label class="form-control-label">Enter Department </label>
-                                    <input type="text" placeholder="Department" class="form-control" name="DepName">
+                                    <input type="text" placeholder="Department" class="form-control" name="DepName" value="<?php echo $row1['Dep_Name']?>">
                                     <input type="submit" value="Add Department" class="btn btn-primary" name="addDepartment">
                                 </div>
                             </form>

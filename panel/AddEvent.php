@@ -5,10 +5,11 @@ if(!isset($_SESSION['admin']))
     header('location:adminlogin.php');
 }else{
 include '../connection.php';
-$query1="select * from event_category";
+$query1="select * from event";
 $result1=mysqli_query($conn,$query1);
-
-if(isset($_POST['addevent']))
+$query2="select * from event_category";
+$result2=mysqli_query($conn,$query2);
+if(isset($_POST['addEvent']))
     {
         $eventname=$_POST['eventName'];
         $ddeventcategory=$_POST['ddeventcategory'];
@@ -71,9 +72,10 @@ include 'header.php';
                                     <select class="form-control" name="ddeventcategory">
                                         <?php
                                         if ($result1) {
-                                            while ($row = mysqli_fetch_array($result1)) {
+                                            while ($row2 = mysqli_fetch_array($result2)) {
                                         ?>
-                                                <option value="<?php echo $row['Category_Id']; ?>"><?php echo $row['Category_Name'] ?></option>
+                                                <option value="<?php echo $row2['Category_Id']; ?>">
+                                                <?php echo $row2['Category_Name'] ?></option>
                                         <?php
                                             }
                                         }
@@ -93,7 +95,7 @@ include 'header.php';
                                     <input type="file" class="form-control" name="Image">
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Add Event" class="btn btn-primary" name="addevent">
+                                    <input type="submit" value="Add Event" class="btn btn-primary" name="addEvent">
                                 </div>
                             </form>
                         </div>

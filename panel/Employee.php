@@ -59,7 +59,7 @@ include 'header.php';
                                                 <td><?php echo $row['Emp_Password'] ?></td>
                                                 <td><?php echo $row['Emp_DOB'] ?></td>
                                                 <td><?php echo $row['Emp_Contact'] ?></td>
-                                                <td><a href="<?php echo 'editempoyee.php?id=' . $row['Emp_Id'] ?>">Edit</a>&nbsp;<a href="<?php echo 'deleteemployee.php?id=' . $row['Emp_Id'] ?>">Delete</a></td>
+                                                <td><a href="<?php echo 'editemployee.php?id=' . $row['Emp_Id'] ?>">Edit</a>&nbsp;<a href="<?php echo 'deleteemployee.php?id=' . $row['Emp_Id'] ?>">Delete</a></td>
                                             </tr>
                                         <?php
                                         }

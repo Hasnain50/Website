@@ -9,7 +9,7 @@ include 'header.php';
                     <!-- Section Tittle -->
                     <div class="section-tittle mb-70">
                         <span>Our Professional members </span>
-                        <h2>Our Team Mambers</h2>
+                        <h2>Our Team Members</h2>
                     </div> 
                 </div>
             </div>

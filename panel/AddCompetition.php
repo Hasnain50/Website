@@ -16,9 +16,9 @@ $result1=mysqli_query($conn,$query1);
         $compstartdate=$_POST['StartingDate'];
         $compenddate=$_POST['EndDate'];
         $compwinner=$_POST['Winnerprize'];
-
-        $query="INSERT INTO competitions (Competition_Name,Competition_Description,Registration_Date,Starting_Date,End_Date,Winner) 
-        values('$compname','$compdescription','$compregsdate','$compstartdate','$compenddate','$compwinner')";
+        
+        $query="INSERT INTO competitions (Competition_Name,Competition_Description,Registration_Date,Starting_Date,End_Date,Prize,Winner_Id) 
+        values('$compname','$compdescription','$compregsdate','$compstartdate','$compenddate','$compwinner','')";
 
         $result=mysqli_query($conn,$query);
         if($result)

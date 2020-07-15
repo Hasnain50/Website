@@ -6,6 +6,7 @@ if(!isset($_SESSION['admin']))
 }else{
 include '../connection.php';
 $Eid=$_GET['id'];
+
 $Pquery = "select * from event_participants where Event_Id=".$Eid;
 $Presult = mysqli_query($conn, $Pquery);
 
@@ -46,6 +47,7 @@ include 'header.php';
                                     <thead>
                                         <tr>
                                             <th>Employee Name</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -61,7 +63,7 @@ include 'header.php';
 
       ?>
      <td><?php echo $EmpRow['Emp_Name']?></td>
-      
+     <td><?php echo $row['Status']?></td>
       <td><a href="<?php echo 'updateStatus.php?id='.$row['EventParticipant_Id'] ?>">Approved</a></td>
       </tr>
     <?php

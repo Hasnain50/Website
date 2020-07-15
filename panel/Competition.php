@@ -45,6 +45,7 @@ include 'header.php';
                                         <th>Registration Date</th>
                                         <th>Starting Date</th>
                                         <th>End Date</th>
+                                        <th>Prize</th>
                                         <th>Winner</th>
                                         <th>Action</th>
                                         </tr>
@@ -60,8 +61,9 @@ include 'header.php';
                                     <td><?php echo $row['Registration_Date']?></td>
                                     <td><?php echo $row['Starting_Date']?></td>
                                     <td><?php echo $row['End_Date']?></td>
-                                    <td><?php echo $row['Winner']?></td>
-                                    <td><a href="<?php echo 'editcompetition.php?id='.$row['Competition_Id'] ?>">Edit</a>&nbsp;<a href="<?php echo 'deletecompetition.php?id='.$row['Competition_Id'] ?>">Delete</a></td>
+                                    <td><?php echo $row['Prize']?></td>
+                                    <td><?php echo $row['Winner_Id']?></td>
+                                    <td><a href="<?php echo 'editcompetition.php?id='.$row['Competition_Id'] ?>">Edit</a>&nbsp;<a href="<?php echo 'deletecompetition.php?id='.$row['Competition_Id'] ?>">Delete</a>&nbsp;<a href="<?php echo 'AnnounceWinner.php?id='.$row['Competition_Id'] ?>">AnnounceWinner</a></td>
                                     </tr>
                                 <?php
                                 }

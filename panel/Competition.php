@@ -47,6 +47,7 @@ include 'header.php';
                                         <th>End Date</th>
                                         <th>Prize</th>
                                         <th>Winner</th>
+                                        <th>Image</th>
                                         <th>Action</th>
                                         </tr>
                                     </thead>
@@ -63,6 +64,7 @@ include 'header.php';
                                     <td><?php echo $row['End_Date']?></td>
                                     <td><?php echo $row['Prize']?></td>
                                     <td><?php echo $row['Winner_Id']?></td>
+                                    <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['Event_Image']);?>" width="100px" height="100px"/></td>
                                     <td><a href="<?php echo 'editcompetition.php?id='.$row['Competition_Id'] ?>">Edit</a>&nbsp;<a href="<?php echo 'deletecompetition.php?id='.$row['Competition_Id'] ?>">Delete</a>&nbsp;<a href="<?php echo 'AnnounceWinner.php?id='.$row['Competition_Id'] ?>">AnnounceWinner</a></td>
                                     </tr>
                                 <?php

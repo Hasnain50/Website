@@ -16,9 +16,14 @@ $result1=mysqli_query($conn,$query1);
         $compstartdate=$_POST['StartingDate'];
         $compenddate=$_POST['EndDate'];
         $compwinner=$_POST['Winnerprize'];
+        if(count($_FILES)>0)
+        {
+            if(is_uploaded_file($_FILES['Image']['tmp_name']))
+            {
+                $img=addslashes(file_get_contents($_FILES['Image']['tmp_name']));
         
-        $query="INSERT INTO competitions (Competition_Name,Competition_Description,Registration_Date,Starting_Date,End_Date,Prize,Winner_Id) 
-        values('$compname','$compdescription','$compregsdate','$compstartdate','$compenddate','$compwinner','')";
+        $query="INSERT INTO competitions (Competition_Name,Competition_Description,Registration_Date,Starting_Date,End_Date,Prize,Winner_Id,Competition_Image) 
+        values('$compname','$compdescription','$compregsdate','$compstartdate','$compenddate','$compwinner','','$img')";
 
         $result=mysqli_query($conn,$query);
         if($result)
@@ -27,6 +32,8 @@ $result1=mysqli_query($conn,$query1);
         }else{
             echo "Failed ! ".mysqli_error($conn);
         }
+    }
+}
     }
 include 'header.php';
 ?>
@@ -77,6 +84,11 @@ include 'header.php';
                                     <label class="form-control-label">Enter Winner Prize</label>
                                     <input type="text" class="form-control" name="Winnerprize">
                                 </div>
+                                <div class="form-group">
+                                     <label class="form-control-label">Insert Image</label> 
+                                    <input type="file" class="form-control" name="Image">
+                                </div>
+                                
                                 <div class="form-group">
                                     <input type="submit" value="Add Competition" class="btn btn-primary" name="addCompetiton">
                                 </div>

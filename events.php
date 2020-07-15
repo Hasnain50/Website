@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 include 'connection.php';
-$query="Select * from event";
+$query="Select * from events";
 $result=mysqli_query($conn,$query);
 
 ?>
@@ -33,7 +33,7 @@ $result=mysqli_query($conn,$query);
                         <div class="cat-cap">
                             <h5><a href=""><?php echo $row['Event_Name']?></a></h5>
                             <p>There are many variations of passages of lorem Ipsum available but the new majority have suffered.</p>
-                            <a href="EventRegistration.php?id=".<?php echo $row['Event_Id']?>><button class="boxed-btn">Register</button></a>
+                            <a href="EventRegistration.php?id=<?php echo $row['Event_Id']?>"><button class="boxed-btn">Register</button></a>
                         </div>
                     </div>
                 </div>

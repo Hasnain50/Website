@@ -93,8 +93,12 @@ session_start();
                                             <li><a href="about.php">About</a></li>
                                             <li><a href="contact.php">Contact</a></li>
                                             <?php if(!isset($_SESSION['employee'])){ ?>
-                                            <li><a href="panel/adminlogin.php">Login</a></li>
-                                            <?php } else { ?>
+                                                <li>Login
+                                                <ul class="submenu">
+                                                <li><a href="panel/employeelogin.php">Employee</a></li>
+                                                <li><a href="panel/adminlogin.php">Admin</a></li>
+                                                </ul>
+                                                </li> <?php } else { ?>
                                             <li><a href="logout.php">LogOut</a></li>
                                             <?php } ?>
                                             <!-- <li><a href="panel/login.php">Login</a></li> -->

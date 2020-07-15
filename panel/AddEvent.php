@@ -5,7 +5,7 @@ if(!isset($_SESSION['admin']))
     header('location:adminlogin.php');
 }else{
 include '../connection.php';
-$query1="select * from event";
+$query1="select * from events";
 $result1=mysqli_query($conn,$query1);
 $query2="select * from event_category";
 $result2=mysqli_query($conn,$query2);
@@ -23,7 +23,7 @@ if(isset($_POST['addEvent']))
                 $img=addslashes(file_get_contents($_FILES['Image']['tmp_name']));
             
 
-        $query="INSERT INTO event (Event_Name,Category_Id,Event_Date,Event_Description,Event_Image) 
+        $query="INSERT INTO events (Event_Name,Category_Id,Event_Date,Event_Description,Event_Image) 
         values('$eventname','$ddeventcategory','$eventdate','$eventdescription','$img')";
 
         $result=mysqli_query($conn,$query);

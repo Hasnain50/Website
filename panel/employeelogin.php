@@ -13,6 +13,7 @@ if(isset($_POST['loginbtn']))
     if($count)
     {
        $_SESSION['employee']=$loginemail;
+       $_SESSION['emp']=$row['Emp_Id'];
         header("Location:../index.php");
     }else{
 

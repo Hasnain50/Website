@@ -67,7 +67,7 @@
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Events </a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                     <li><a href="Events.php">Meeting</a></li>
-                    <li><a href="#">Competitons</a></li>
+                    <li><a href="Competition.php">Competitons</a></li>
                   </ul>
                 </li>
                 <li><a href="../Winners.php"> <i class="icon-grid"></i>Winners </a></li>

@@ -7,7 +7,7 @@
   $row1=mysqli_fetch_array($result1);  
    $EventId=$id;
    $EmpId=$_POST['EmpId'];
-   $query="INSERT INTO event_participants(Emp_Id, Event_Id, Staus) VALUES ('$EmpId','$EventId','Pending')";
+   $query="INSERT INTO event_participants(Emp_Id, Event_Id, Status) VALUES ('$EmpId','$EventId','Pending')";
    $result=mysqli_query($conn,$query);
    if($result)
    {

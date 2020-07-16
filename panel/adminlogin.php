@@ -61,7 +61,7 @@ if(isset($_POST['loginbtn']))
               <div class="info d-flex align-items-center">
                 <div class="content">
                   <div class="logo">
-                    <h1>Welcome</h1>
+                    <h1>Admin Login</h1>
                   </div>
                   <p>I am rider service provider</p>
                 </div>

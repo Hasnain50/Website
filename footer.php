@@ -8,16 +8,16 @@
                         <div class="single-footer-caption mb-50">
                             <!-- logo -->
                             <div class="footer-logo">
-                                <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                <a href="index.html"><img src="assets/img/logo/logo2.png" alt=""></a>
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
-                                    <p class="info1">Receive updates and latest news direct from Simply enter.</p>
+                                    <p class="info1">We take good care of our employees</p>
                                 </div>
                             </div>
                             <div class="footer-number">
-                                <h4><span>+564 </span>7885 3222</h4>
-                                <p>youremail@gmail.com</p>
+                                <h4><span>+92 </span>123456789</h4>
+                                <p>bluepumpkin@gmail.com</p>
                             </div>
                         </div>
                     </div>

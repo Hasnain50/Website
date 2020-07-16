@@ -6,7 +6,7 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Business HTML-5 Template </title>
+	<title>Blue Pumpkin </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="manifest" href="site.webmanifest">
@@ -49,8 +49,8 @@ session_start();
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="header-info-left">
                                 <ul>     
-                                    <li><i class="far fa-clock"></i> Mon - SAT: 6.00 am - 10.00 pm</li>
-                                    <li>Sun:  Closed</li>
+                                    <!-- <li><i class="far fa-clock"></i> Mon - SAT: 6.00 am - 10.00 pm</li> -->
+                                    <!-- <li>Sun:  Closed</li> -->
                                 </ul>
                             </div>
                             <div class="header-info-right">

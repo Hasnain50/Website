@@ -85,7 +85,7 @@ session_start();
                                             <li><a href="">Events</a>
                                                 <ul class="submenu">
                                                     <li><a href="events.php">Meetings</a></li>
-                                                    <li><a href="competiton.php">Competitons</a></li>
+                                                    <li><a href="competitions.php">Competitons</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="winner.php">Winners</a></li>

@@ -6,9 +6,10 @@ if(!isset($_SESSION['admin']))
 }else{
     include '../connection.php';
     $id=$_GET['id'];
-    $query1="SELECT * FROM competition WHERE Competition_Id=".$id;
+    $query1="SELECT * FROM competitions WHERE Competition_Id=".$id;
     $result1=mysqli_query($conn,$query1);
     $row1 = mysqli_fetch_array($result1);
+
     if(isset($_POST['EditCompetition']))
     {
         $compname=$_POST['CompetitonName'];
@@ -26,7 +27,7 @@ if(!isset($_SESSION['admin']))
         }else{
             $img=$_POST['img1'];
         }
-        $query="UPDATE `competitions` SET `Competition_Name`='$compname',`Competition_Description`='$compdescription',`Registration_Date`='$compregsdate',`Starting_Date`='$compstartdate',`End_Date`='$compenddate',`Prize`='$compwinner',`Winner_Id`='',`Competition_Image`='$img'";
+        $query="UPDATE `competitions` SET `Competition_Name`='$compname',`Competition_Description`='$compdescription',`Registration_Date`='$compregsdate',`Starting_Date`='$compstartdate',`End_Date`='$compenddate',`Prize`='$compwinner',`Competition_Image`='$img' WHERE Competition_Id='$id'";
 
         $result=mysqli_query($conn,$query);
         if($result)
@@ -90,11 +91,11 @@ if(!isset($_SESSION['admin']))
                                      <label class="form-control-label">Insert Image</label>
                                      <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['Competition_Image']);?>" width="100px" height="100px"/> 
                                     <input type="file" class="form-control" name="Image">
-                                    <input type="hidden" value="<?php echo $row1['Competition_Image']?>" name="img1"/>
+                                    <input type="hidden" value="" name="img1"/>
                                 </div>
                                 
                                 <div class="form-group">
-                                    <input type="submit" value="Add Competition" class="btn btn-primary" name="EditCompetition">
+                                    <input type="submit" value="Edit Competition" class="btn btn-primary" name="EditCompetition">
                                 </div>
                             </form>
                                        </div>

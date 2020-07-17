@@ -16,14 +16,17 @@ $result1=mysqli_query($conn,$query1);
         $compstartdate=$_POST['StartingDate'];
         $compenddate=$_POST['EndDate'];
         $compwinner=$_POST['Winnerprize'];
+        $img = "NULL";
+        
         if(count($_FILES)>0)
         {
             if(is_uploaded_file($_FILES['Image']['tmp_name']))
             {
                 $img=addslashes(file_get_contents($_FILES['Image']['tmp_name']));
-        
-        $query="INSERT INTO competitions (Competition_Name,Competition_Description,Registration_Date,Starting_Date,End_Date,Prize,Winner_Id,Competition_Image) 
-        values('$compname','$compdescription','$compregsdate','$compstartdate','$compenddate','$compwinner','','$img')";
+            }
+        }
+        $query="INSERT INTO competitions (Competition_Name,Competition_Description,Registration_Date,Starting_Date,End_Date,Prize,Competition_Image) 
+        values('$compname','$compdescription','$compregsdate','$compstartdate','$compenddate','$compwinner','$img')";
 
         $result=mysqli_query($conn,$query);
         if($result)
@@ -32,8 +35,6 @@ $result1=mysqli_query($conn,$query1);
         }else{
             echo "Failed ! ".mysqli_error($conn);
         }
-    }
-}
     }
 include 'header.php';
 ?>

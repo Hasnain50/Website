@@ -8,7 +8,7 @@ if(!isset($_SESSION['admin']))
     $id=$_GET['id'];
     $query1="SELECT * FROM competition WHERE Competition_Id=".$id;
     $result1=mysqli_query($conn,$query1);
-    // $row1 = mysqli_fetch_array($result1);
+    $row1 = mysqli_fetch_array($result1);
     if(isset($_POST['EditCompetition']))
     {
         $compname=$_POST['CompetitonName'];
@@ -64,31 +64,33 @@ if(!isset($_SESSION['admin']))
                             <form method="POST">
                                 <div class="form-group">
                                     <label class="form-control-label">Enter Competiton Name </label>
-                                    <input type="text" placeholder="Competiton Name" class="form-control" name="CompetitonName">
+                                    <input type="text" placeholder="Competiton Name" class="form-control" name="CompetitonName" value="<?php echo $row1['Competition_Name']?>">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Enter Competiton Description</label>
-                                    <input type="text" placeholder="Competiton Description" class="form-control" name="CompetitonDescription">
+                                    <input type="text" placeholder="Competiton Description" class="form-control" name="CompetitonDescription"value="<?php echo $row1['Competition_Description']?>">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Enter Registration Date</label>
-                                    <input type="Date" class="form-control" name="RegistrationDate">
+                                    <input type="Date" class="form-control" name="RegistrationDate"value="<?php echo $row1['Registration_Date']?>">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Enter Starting Date</label>
-                                    <input type="Date" class="form-control" name="StartingDate">
+                                    <input type="Date" class="form-control" name="StartingDate"value="<?php echo $row1['Starting_Date']?>">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Enter End Date</label>
-                                    <input type="Date" class="form-control" name="EndDate">
+                                    <input type="Date" class="form-control" name="EndDate"value="<?php echo $row1['End_Date']?>">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Enter Winner Prize</label>
-                                    <input type="text" class="form-control" name="Winnerprize">
+                                    <input type="text" class="form-control" name="Winnerprize"value="<?php echo $row1['Prize']?>">
                                 </div>
                                 <div class="form-group">
-                                     <label class="form-control-label">Insert Image</label> 
+                                     <label class="form-control-label">Insert Image</label>
+                                     <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['Competition_Image']);?>" width="100px" height="100px"/> 
                                     <input type="file" class="form-control" name="Image">
+                                    <input type="hidden" value="<?php echo $row1['Competition_Image']?>" name="img1"/>
                                 </div>
                                 
                                 <div class="form-group">

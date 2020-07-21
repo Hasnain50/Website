@@ -40,7 +40,18 @@ include 'connection.php';
       <h4><?php echo $row1['Event_Date'];?></h4>
       <form method="POST">
         <input type="hidden" name="EmpId" value="<?php echo $_SESSION['emp'];?>"/>
-        <input type="submit" value="Confirm Registration" name="btnRegister"/>
+        <?php
+        $EmpId=$_SESSION['emp'];
+        $checkQuery="Select * from event_participants where Event_Id='$id' AND Emp_Id='$EmpId' ";
+        $checkResult=mysqli_query($conn,$checkQuery);
+        if(mysqli_num_rows($checkResult)<=0){
+        ?>
+        <input type="submit" value="Confirm Registration" name="btnCRegister"/>
+        <?php
+        }else{
+          echo "<label>Already Registered<label>";
+        }
+        ?>
       </form>
     </div>
  

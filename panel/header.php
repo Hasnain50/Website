@@ -70,7 +70,7 @@
                     <li><a href="Competition.php">Competitons</a></li>
                   </ul>
                 </li>
-                <li><a href="../Winners.php"> <i class="icon-grid"></i>Winners </a></li>
+                <li><a href="Announcement.php"> <i class="icon-grid"></i>Winners </a></li>
                 <li><a href="../logout.php"> <i class="icon-logout"></i>Logout </a></li>
         
       </nav>

@@ -32,16 +32,18 @@ $result=mysqli_query($conn,$query);
                         </div>
                         <div class="cat-cap">
                             <h5><a href=""><?php echo $row['Competition_Name']?></a></h5>
-                            <p>The following are some of the cognitive benefits of playing video games.
-Improves coordination
-Improves problem-solving skills
-Enhances memory
-Improves attention and concentration
-It is a great source of learning
-Improves the brain's speed
-Enhances multitasking skills
-Improves social skills.</p>
+                            <p><?php echo $row['Competition_Description']?></p>
+                            <?php
+                            $date=$row['Registration_Date'];
+                            if($date>=date("Y-m-d"))
+                            {
+                            ?>
                             <a href="CompetitionRegistration.php?id=<?php echo $row['Competition_Id']?>"><button class="boxed-btn">Register</button></a>
+                            <?php
+                            }else{
+                                echo "<label>Registration End</label>";
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

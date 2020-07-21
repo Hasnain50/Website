@@ -5,8 +5,8 @@ if(!isset($_SESSION['admin']))
     header('location:adminlogin.php');
 }else{
 include '../connection.php';
-$query = "SELECT * FROM `competitions`";
- $result = mysqli_query($conn, $query);
+$query = "SELECT * FROM `competitions` where End_Date <= CURDATE()";
+$result = mysqli_query($conn, $query);
 include 'header.php';
 ?>
 <div class="page-content">
@@ -34,8 +34,7 @@ include 'header.php';
                         
                     </div>
                         <div class="block-body">
-                        <div style="text-align: center;"><a href="AddCompetition.php" class="btn btn-primary">Add Competition</a></div>
-                            <div class="table-responsive">
+                        <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
@@ -46,7 +45,6 @@ include 'header.php';
                                         <th>Starting Date</th>
                                         <th>End Date</th>
                                         <th>Prize</th>
-                                        <th>Winner</th>
                                         <th>Image</th>
                                         <th>Action</th>
                                         </tr>
@@ -54,6 +52,7 @@ include 'header.php';
                                     <tbody>
                                     <?php
                                     while ($row=mysqli_fetch_array($result)){
+                                        if($row['Winner_Id']===null){
                                     ?>
                                     <tr> 
                                     <td><?php echo $row['Competition_Id']?></td>
@@ -63,20 +62,12 @@ include 'header.php';
                                     <td><?php echo $row['Starting_Date']?></td>
                                     <td><?php echo $row['End_Date']?></td>
                                     <td><?php echo $row['Prize']?></td>
-                                    <td><?php echo $row['Winner_Id']?></td>
                                     <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['Event_Image']);?>" width="100px" height="100px"/></td>
-                                    <td><a href="<?php echo 'editcompetition.php?id='.$row['Competition_Id'] ?>">Edit</a>&nbsp;<a href="<?php echo 'deletecompetition.php?id='.$row['Competition_Id'] ?>">Delete</a>&nbsp;<a href="<?php echo 'showcompparticipants.php?id='.$row['Competition_Id'] ?>">Show Participants</a>
-                                    <?php
-                                    if($row['Winner_Id']!==null)
-                                    {
-                                    ?>
-                                    <a href="<?php echo 'showWinner.php?id='.$row['Competition_Id'] ?>">ShowWinner</a></td>
-                                    <?php
-                                    }
-                                    ?>
+                                    <td><a href="<?php echo 'AnnounceWinner.php?id='.$row['Competition_Id'] ?>">AnnounceWinner</a></td>
                                     </tr>
                                 <?php
                                 }
+                            }
                                 ?>
                         </tbody>
                     </table>

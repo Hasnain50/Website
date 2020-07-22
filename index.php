@@ -200,12 +200,12 @@ include_once 'header.php';
                                     <path fill-rule="evenodd"  fill="rgb(240, 78, 60)"
                                     d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"/>
                                     </svg>
-                                    <p>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis por incididunt ut labore et dolore mas. </p>
+                                    <h2 style="color: red;">Our winner is</h2>
                                 </div>
                                 <!-- founder -->
                                 <div class="testimonial-founder d-flex align-items-center justify-content-center">
                                     <div class="founder-img">
-                                        <img src="assets/img/gallery/Homepage_testi.png" alt="">
+                                        <img src="assets/img/gallery/Homepage_testi.png" alt="" height="150px">
                                     </div>
                                     <div class="founder-text">
                                         <span>Jessya Inn</span>

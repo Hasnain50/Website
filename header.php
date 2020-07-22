@@ -99,6 +99,7 @@ session_start();
                                                 <li><a href="panel/adminlogin.php">Admin</a></li>
                                                 </ul>
                                                 </li> <?php } else { ?>
+                                            <li><a href="allCompetition.php">Results</a></li>
                                             <li><a href="logout.php">LogOut</a></li>
                                             <?php } ?>
                                             <!-- <li><a href="panel/login.php">Login</a></li> -->
